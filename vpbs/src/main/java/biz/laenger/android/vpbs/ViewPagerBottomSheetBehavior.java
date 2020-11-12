@@ -42,6 +42,8 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import androidx.viewpager2.widget.ViewPager2;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.ref.WeakReference;
@@ -626,6 +628,17 @@ public class ViewPagerBottomSheetBehavior<V extends View> extends CoordinatorLay
             if (scrollingChild != null) {
                 return scrollingChild;
             }
+        }else if (view instanceof ViewPager2){
+            ViewPager2 viewPager = (ViewPager2) view;
+            View currentViewPagerChild = ViewPagerUtils.getCurrentView(viewPager);
+            if (currentViewPagerChild == null) {
+                return null;
+            }
+
+            View scrollingChild = findScrollingChild(currentViewPagerChild);
+            if (scrollingChild != null) {
+                return scrollingChild;
+            }
         } else if (view instanceof ViewGroup) {
             ViewGroup group = (ViewGroup) view;
             for (int i = 0, count = group.getChildCount(); i < count; i++) {
@@ -813,7 +826,7 @@ public class ViewPagerBottomSheetBehavior<V extends View> extends CoordinatorLay
             out.writeInt(state);
         }
 
-        public static final Creator<SavedState> CREATOR = new ClassLoaderCreator<SavedState>() {
+        public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.ClassLoaderCreator<SavedState>() {
             @Override
             public SavedState createFromParcel(Parcel in, ClassLoader loader) {
                 return new SavedState(in, loader);
