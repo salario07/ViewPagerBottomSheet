@@ -6,11 +6,11 @@ ext.title = 'ViewPagerBottomSheetBehavior'
 description = 'Android BottomSheetBehavior with ViewPager support'
 
 android {
-    compileSdkVersion rootProject.compileSdkVersion
+    compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion rootProject.targetSdkVersion
         versionName '0.0.6'
     }

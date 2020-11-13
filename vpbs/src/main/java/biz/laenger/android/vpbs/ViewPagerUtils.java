@@ -1,4 +1,4 @@
-package android.support.v4.view;
+package biz.laenger.android.vpbs;
 
 import android.view.View;
 
