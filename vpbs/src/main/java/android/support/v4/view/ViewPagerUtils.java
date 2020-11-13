@@ -2,6 +2,7 @@ package android.support.v4.view;
 
 import android.view.View;
 
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 public class ViewPagerUtils {
@@ -11,7 +12,10 @@ public class ViewPagerUtils {
         for (int i = 0; i < viewPager.getChildCount(); i++) {
             final View child = viewPager.getChildAt(i);
             final ViewPager.LayoutParams layoutParams = (ViewPager.LayoutParams) child.getLayoutParams();
-            if (!layoutParams.isDecor && currentItem == layoutParams.position) {
+            /*if (!layoutParams.isDecor && currentItem == layoutParams.position) {
+                return child;
+            }*/
+            if (currentItem==1){
                 return child;
             }
         }
@@ -22,8 +26,11 @@ public class ViewPagerUtils {
         final int currentItem = viewPager.getCurrentItem();
         for (int i = 0; i < viewPager.getChildCount(); i++) {
             final View child = viewPager.getChildAt(i);
-            final ViewPager.LayoutParams layoutParams = (ViewPager.LayoutParams) child.getLayoutParams();
-            if (!layoutParams.isDecor && currentItem == layoutParams.position) {
+            final ViewPager2.LayoutParams layoutParams = child.getLayoutParams();
+            /*if (!layoutParams.isDecor && currentItem == layoutParams.position) {
+                return child;
+            }*/
+            if (currentItem==1){
                 return child;
             }
         }

@@ -1,11 +1,11 @@
 package biz.laenger.android.vpbs;
 
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 public final class BottomSheetUtils {
