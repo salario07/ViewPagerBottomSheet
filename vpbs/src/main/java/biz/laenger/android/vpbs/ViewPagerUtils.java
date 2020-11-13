@@ -15,7 +15,7 @@ public class ViewPagerUtils {
             /*if (!layoutParams.isDecor && currentItem == layoutParams.position) {
                 return child;
             }*/
-            if (currentItem==1){
+            if (i==1){
                 return child;
             }
         }
@@ -30,7 +30,7 @@ public class ViewPagerUtils {
             /*if (!layoutParams.isDecor && currentItem == layoutParams.position) {
                 return child;
             }*/
-            if (currentItem==1){
+            if (i==1){
                 return child;
             }
         }
