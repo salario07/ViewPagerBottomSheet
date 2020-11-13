@@ -25,12 +25,13 @@ public class ViewPagerUtils {
     public static View getCurrentView(ViewPager2 viewPager) {
         final int currentItem = viewPager.getCurrentItem();
         for (int i = 0; i < viewPager.getChildCount(); i++) {
-            final View child = viewPager.getChildAt(i);
-            final ViewPager2.LayoutParams layoutParams = child.getLayoutParams();
+            /*final View child = viewPager.getChildAt(i);
+            final ViewPager2.LayoutParams layoutParams = child.getLayoutParams();*/
+            View child=viewPager.getChildAt(currentItem);
             /*if (!layoutParams.isDecor && currentItem == layoutParams.position) {
                 return child;
             }*/
-            if (i==1){
+            if (child!=null){
                 return child;
             }
         }
